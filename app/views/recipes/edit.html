@@ -1,0 +1,16 @@
+<br>
+<div class="row">
+<div class="centered">
+    <%= image_tag @recipe.image %><br>
+</div>
+<hr />
+    <div class="panel">
+<%= form_for(@recipe) do |f| %>
+        <div> Recipe name: <br>  <%= f.text_field :name %></div>
+        <div>Recipe Description:<br> <%= f.text_field :description %></div>
+        <div> Recipe ingredients:<br> <%= f.text_field :ingredients %></div>
+        <div>Recipe directions:<br> <%= f.text_field :directions %></div>
+            <%= f.submit "Update"  %>
+         <% end %>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+      <nav class="top-bar" data-tobar role="navigation">
+      <%= link_to "Home", "/recipes" %>
+      <div class="right" >
+      <% if current_user %>
+            <font color="white"> <%= current_user.email %></font>
+            <%= link_to "Log out", logout_path, method: "delete" %>
+      <% else %>
+            <%= link_to "Sign up", "/signup" %>
+            <%= link_to "Log in", "/login" %>
+        <% end %>
+    </div>
+      </nav>
+      <div id="container">  
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

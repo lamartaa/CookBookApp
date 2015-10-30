@@ -1,0 +1,15 @@
+<div class="row">
+    <br>
+    <div class="panel">
+        <h3 class="centered">Please sign up!</h3>
+    </div>
+    <div class="panel">
+<%= form_for :user, url: '/users' do |f| %>
+    <%= f.text_field :first_name, :placeholder => 'First Name' %>
+    <%= f.text_field :last_name, :placeholder => 'Last Name' %>
+    <%= f.text_field :email, :placeholder => 'Email' %>
+    <%= f.password_field :password, :placeholder => 'Password' %>
+    <%= f.submit "Sign up" %>
+    <% end %>
+</div>
+</div>

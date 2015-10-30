@@ -1,0 +1,14 @@
+<br>
+<div class="row">
+    <div class="panel">
+        <h3 class="centered">Please log in!</h3>
+    </div>
+    <div class="panel">
+<%= form_for(:session, url: login_path) do |f| %>
+    <%= f.email_field :email, :placeholder => 'Email' %>
+    <%= f.password_field :password, :placeholder => 'Password' %>
+    <%= f.submit "Log in" %>
+    <p><%= link_to "forgotten password?", new_password_reset_path %></p>
+    <% end %>
+</div>
+</div>

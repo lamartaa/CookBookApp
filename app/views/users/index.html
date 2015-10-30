@@ -1,0 +1,10 @@
+
+<body>
+    Select the user that you want to edit<br>
+    <%  @users.each do |u| %>
+    <div>
+        <%= link_to "#{u.email}", edit_user_path(u) %> 
+    </div>
+    <% end %>
+    
+</body>

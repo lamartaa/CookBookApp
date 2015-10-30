@@ -1,0 +1,16 @@
+<br>
+<div class="row">
+    <div class="panel">
+        <div class="centered"><h3>Create a new recipe!</h3></div>
+    </div>
+    <div class="panel">
+<%= form_for(@recipe) do |f| %>
+    <%= f.text_field :name, :placeholder => 'Recipe Name' %>
+    <%= f.text_field :image, :placeholder => 'Image' %>
+    <%= f.text_field :description, :placeholder => 'Description' %>
+    <%= f.text_field :ingredients, :placeholder => 'Ingredients' %>
+    <%= f.text_field :directions, :placeholder => 'Directions' %>
+    <%= f.submit %>
+    <% end %>
+</div>
+</div>

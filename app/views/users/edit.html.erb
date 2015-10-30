@@ -1,0 +1,22 @@
+
+<body>
+    <div class="row">
+    <div class="panel">
+        <h3 class="centered"> Edit  <%= @user.email %></h3>
+    </div>
+    <div class="panel">
+    <tr>
+        <td>         
+            <%= form_for(@user)  do |f| %>
+                First Name: <%= f.text_field :first_name %>
+                Last Name: <%= f.text_field :last_name %>
+                New Password: <%= f.password_field :password %>
+                Confirm New Password: <%= f.password_field :password_confirmation %>
+                Admin: <%= f.check_box :admin %><br>
+                <%= f.submit "Update" %>
+            <% end %>
+        </td>
+    </tr>
+    </div>
+    </div>
+</body>
